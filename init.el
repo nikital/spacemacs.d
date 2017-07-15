@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (spacemacs-evil :packages evil-unimpaired linum-relative)
+     python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -261,7 +263,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -332,6 +334,8 @@ you should place your code here."
     (evil-scroll-line-down 5))
   (bind-key "C-j" 'nik/scroll-down evil-motion-state-map)
   (bind-key "C-k" 'nik/scroll-up evil-motion-state-map)
+
+  (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -340,7 +344,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-themes helm-swoop helm-projectile helm-mode-manager helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag ace-jump-helm-line which-key wgrep use-package toc-org smex smeargle pcre2el orgit org-projectile org-present org-pomodoro org-download org-bullets magit-gitflow macrostep ivy-hydra htmlize help-fns+ helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flx exec-path-from-shell evil-visualstar evil-magit evil-escape evil-commentary elisp-slime-nav counsel-projectile company-statistics bind-map auto-yasnippet auto-compile ace-window ac-ispell))))
+    (vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic f s helm-themes helm-swoop helm-projectile helm-mode-manager helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag ace-jump-helm-line which-key wgrep use-package toc-org smex smeargle pcre2el orgit org-projectile org-present org-pomodoro org-download org-bullets magit-gitflow macrostep ivy-hydra htmlize help-fns+ helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flx exec-path-from-shell evil-visualstar evil-magit evil-escape evil-commentary elisp-slime-nav counsel-projectile company-statistics bind-map auto-yasnippet auto-compile ace-window ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
