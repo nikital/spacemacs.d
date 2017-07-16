@@ -1,0 +1,5 @@
+#+STARTUP: indent showall
+
+* Annoying
+** find-file-other-window
+Will open dired on the first RET

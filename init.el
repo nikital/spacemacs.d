@@ -306,6 +306,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq scroll-step 1
         scroll-conservatively 5)
+  (modify-syntax-entry ?_ "w" (standard-syntax-table))
   )
 
 (defun dotspacemacs/user-config ()
@@ -336,6 +337,8 @@ you should place your code here."
   (bind-key "C-k" 'nik/scroll-up evil-motion-state-map)
 
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
+
+  (unbind-key "C-w" company-active-map)
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
