@@ -338,7 +338,9 @@ you should place your code here."
 
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
 
-  (unbind-key "C-w" company-active-map)
+  (use-package company
+    :config
+    (unbind-key "C-w" company-active-map))
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
