@@ -341,6 +341,11 @@ you should place your code here."
   (use-package company
     :config
     (unbind-key "C-w" company-active-map))
+
+  (use-package cc-mode
+    :config
+    (add-to-list 'c-default-style '(other . "stroustrup"))
+    )
   )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
