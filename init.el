@@ -339,6 +339,7 @@ you should place your code here."
   (bind-key "C-k" 'nik/scroll-up evil-motion-state-map)
 
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
+  (spacemacs/set-leader-keys "fF" 'find-file-other-window)
 
   (use-package company
     :defer t
