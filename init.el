@@ -346,18 +346,5 @@ you should place your code here."
     :config
     (add-to-list 'c-default-style '(other . "stroustrup"))
     )
+  (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (vi-tilde-fringe linum-relative evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-ediff evil-args evil-anzu anzu yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic f s helm-themes helm-swoop helm-projectile helm-mode-manager helm-gitignore request helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag ace-jump-helm-line which-key wgrep use-package toc-org smex smeargle pcre2el orgit org-projectile org-present org-pomodoro org-download org-bullets magit-gitflow macrostep ivy-hydra htmlize help-fns+ helm-make gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flx exec-path-from-shell evil-visualstar evil-magit evil-escape evil-commentary elisp-slime-nav counsel-projectile company-statistics bind-map auto-yasnippet auto-compile ace-window ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
