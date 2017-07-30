@@ -340,10 +340,12 @@ you should place your code here."
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
 
   (use-package company
+    :defer t
     :config
     (unbind-key "C-w" company-active-map))
 
   (use-package cc-mode
+    :defer t
     :config
     (add-to-list 'c-default-style '(other . "stroustrup"))
     )
