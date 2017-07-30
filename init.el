@@ -305,7 +305,7 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq scroll-step 1
-        scroll-conservatively 5)
+        scroll-conservatively 1000)
   (modify-syntax-entry ?_ "w" (standard-syntax-table))
   )
 
