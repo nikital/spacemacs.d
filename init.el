@@ -307,6 +307,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq scroll-step 1
         scroll-conservatively 1000)
   (modify-syntax-entry ?_ "w" (standard-syntax-table))
+  (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
 
 (defun dotspacemacs/user-config ()
@@ -346,5 +347,4 @@ you should place your code here."
     :config
     (add-to-list 'c-default-style '(other . "stroustrup"))
     )
-  (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
