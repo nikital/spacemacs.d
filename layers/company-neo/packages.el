@@ -32,6 +32,11 @@
     (unbind-key "<return>" company-active-map)
     (unbind-key "RET" company-active-map)
     (add-to-list 'company-frontends 'company-neo-frontend)
+
+    (with-eval-after-load 'evil
+      (evil-declare-change-repeat 'company-neo/next)
+      (evil-declare-change-repeat 'company-neo/previous)
+      )
     ))
 
 ;;; packages.el ends here
