@@ -346,9 +346,26 @@ you should place your code here."
     :config
     (unbind-key "C-w" company-active-map))
 
+  (defun set-edk2-formatting ()
+    (interactive)
+    (setq c-basic-offset 2)
+    (add-to-list 'c-offsets-alist '(arglist-intro . 16))
+    )
+
   (use-package cc-mode
     :defer t
     :config
+    (advice-add
+     'c-populate-syntax-table :after
+     (lambda (table)
+       (modify-syntax-entry ?_ "w" table)))
     (add-to-list 'c-default-style '(other . "stroustrup"))
+    (add-hook 'c-mode-hook
+              (lambda ()
+                (when (string-prefix-p
+                       (expand-file-name "~/host/qemu/roms/edk2/")
+                       buffer-file-name)
+                  (set-edk2-formatting))
+                ))
     )
   )
