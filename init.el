@@ -31,7 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (spacemacs-evil :packages evil-unimpaired linum-relative)
+     (spacemacs-evil :packages evil-surround evil-unimpaired linum-relative)
      python
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
