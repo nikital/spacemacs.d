@@ -38,7 +38,10 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ivy
+     (ivy
+      :variables
+      ivy-initial-inputs-alist nil
+      ivy-on-del-error-function 'ignore)
      spacemacs-completion
      auto-completion
      ;; better-defaults
