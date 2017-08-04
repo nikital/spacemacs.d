@@ -43,6 +43,7 @@ values."
       ivy-initial-inputs-alist nil
       ivy-on-del-error-function 'ignore)
      spacemacs-completion
+     spacemacs-editing
      auto-completion
      ;; better-defaults
      emacs-lisp
@@ -309,8 +310,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq scroll-step 1
-        scroll-conservatively 1000)
+  (setq scroll-conservatively 5)
   (setq evil-want-C-u-scroll nil)
   (modify-syntax-entry ?_ "w" (standard-syntax-table))
   (setq custom-file (concat spacemacs-cache-directory "custom.el"))
