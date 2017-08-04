@@ -310,6 +310,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq scroll-step 1
         scroll-conservatively 1000)
+  (setq evil-want-C-u-scroll nil)
   (modify-syntax-entry ?_ "w" (standard-syntax-table))
   (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
