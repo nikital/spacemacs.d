@@ -57,7 +57,7 @@ values."
      ;; syntax-checking
      ;; version-control
      evil-commentary
-     company-neo
+     company-insert-selected
      nik-lisp
      gtags
      html
