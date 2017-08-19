@@ -34,7 +34,10 @@ confirm the selection and finish the completion."
     (pre-command
      (when (and company-selection-changed
                 (not (company--company-command-p (this-command-keys))))
-       (company-complete-selection)))))
+       (evil-repeat-changes 'pre)
+       (let ((this-command 'company-complete-selection))
+         (company-complete-selection))
+       (evil-repeat-changes 'post)))))
 
 (defun company-insert-selected//adjust-tooltip-highlight (args)
   "Don't allow the tooltip to highlight the current selection if
