@@ -14,7 +14,6 @@
     (setq company-frontends '(company-insert-selected-frontend
                               company-pseudo-tooltip-frontend
                               company-echo-metadata-frontend))
-    (setq company-selection-wrap-around t)
+    (setq company-selection-wrap-around t)))
 
-    (with-eval-after-load 'evil
-      (evil-declare-change-repeat 'company-select-first-then-next))))
+
