@@ -6,7 +6,9 @@
     :after company
     :bind (:map company-active-map
                 ("TAB" . company-select-first-then-next)
-                ("<tab>" . company-select-first-then-next))
+                ("<tab>" . company-select-first-then-next)
+                ("<S-tab>" . company-select-previous-then-none)
+                ("<backtab>" . company-select-previous-then-none))
     :config
     (unbind-key "<return>" company-active-map)
     (unbind-key "RET" company-active-map)

@@ -22,12 +22,11 @@ confirm the selection and finish the completion."
      (overlay-put company-insert-selected--overlay 'priority 2)
      (advice-add 'company-fill-propertize :filter-args 'company-insert-selected//adjust-tooltip-highlight))
     (update
-     (when company-selection-changed
-       (let ((ov company-insert-selected--overlay)
-             (selected (nth company-selection company-candidates))
-             (prefix (length company-prefix)))
-         (move-overlay ov (- (point) prefix) (point))
-         (overlay-put ov 'display selected))))
+     (let ((ov company-insert-selected--overlay)
+           (selected (nth company-selection company-candidates))
+           (prefix (length company-prefix)))
+       (move-overlay ov (- (point) prefix) (point))
+       (overlay-put ov 'display (and company-selection-changed selected))))
     (hide
      (advice-remove 'company-fill-propertize 'company-insert-selected//adjust-tooltip-highlight)
      (when company-insert-selected--overlay
@@ -51,6 +50,15 @@ true)"
   (if company-selection-changed
       (company-select-next arg)
     (company-set-selection (1- (or arg 1)) 'force-update)))
+
+(defun company-select-previous-then-none (&optional arg)
+  (interactive "p")
+  (if (or (not company-selection-changed)
+           (> company-selection (1- (or arg 1))))
+      (company-select-previous arg)
+    (company-set-selection 0)
+    (setq company-selection-changed nil)
+    (company-call-frontends 'update)))
 
 ;; Integrate with evil if it's present
 (eval-after-load 'evil
