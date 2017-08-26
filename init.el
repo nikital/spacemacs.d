@@ -313,8 +313,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq scroll-conservatively 5)
-  (modify-syntax-entry ?_ "w" (standard-syntax-table))
   (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
 
