@@ -79,6 +79,7 @@ monitoring hooks."
      (setq company-insert-selected--complete-func 'company-insert-selected//complete-with-repeat)
 
      ;; See evil/evil-integration.el, same thing is done for other company functions
-     (evil-declare-ignore-repeat 'company-select-first-then-next)))
+     (evil-declare-ignore-repeat 'company-select-first-then-next)
+     (evil-declare-ignore-repeat 'company-select-previous-then-none)))
 
 (provide 'company-insert-selected)
