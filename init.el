@@ -329,11 +329,6 @@ you should place your code here."
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
   (spacemacs/set-leader-keys "fF" 'find-file-other-window)
 
-  (use-package company
-    :defer t
-    :config
-    (unbind-key "C-w" company-active-map))
-
   (defun set-edk2-formatting ()
     (interactive)
     (setq c-basic-offset 2)
