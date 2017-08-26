@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nik
      (spacemacs-evil :packages evil-surround evil-unimpaired linum-relative)
      python
      ;; ----------------------------------------------------------------
@@ -313,7 +314,6 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq scroll-conservatively 5)
-  (setq evil-want-C-u-scroll nil)
   (modify-syntax-entry ?_ "w" (standard-syntax-table))
   (setq custom-file (concat spacemacs-cache-directory "custom.el"))
   )
@@ -325,25 +325,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
-  (defun evil-c-u ()
-    (interactive)
-    (evil-delete (point-at-bol) (point)))
-  (bind-key "C-u" 'evil-c-u evil-insert-state-map)
-
-  (defun save-some-buffers-no-confirm ()
-    (interactive)
-    (save-some-buffers 'no-confirm))
-  (bind-key "RET" 'save-some-buffers-no-confirm evil-normal-state-map)
-
-  (defun nik/scroll-up ()
-    (interactive)
-    (evil-scroll-line-up 5))
-  (defun nik/scroll-down ()
-    (interactive)
-    (evil-scroll-line-down 5))
-  (bind-key "C-j" 'nik/scroll-down evil-motion-state-map)
-  (bind-key "C-k" 'nik/scroll-up evil-motion-state-map)
 
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
   (spacemacs/set-leader-keys "fF" 'find-file-other-window)
