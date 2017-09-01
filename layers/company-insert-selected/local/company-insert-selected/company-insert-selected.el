@@ -4,7 +4,6 @@
 ;;
 
 (defvar-local company-insert-selected--overlay nil)
-(defvar company-insert-selected--complete-func 'company-complete-selection)
 
 (defun company--company-command-p (keys)
   "Checks if the keys are part of company's overriding keymap"
@@ -34,7 +33,8 @@ confirm the selection and finish the completion."
     (pre-command
      (when (and company-selection-changed
                 (not (company--company-command-p (this-command-keys))))
-       (funcall company-insert-selected--complete-func)))))
+       (company--unread-last-input)
+       (setq this-command 'company-complete-selection)))))
 
 (defun company-insert-selected//adjust-tooltip-highlight (args)
   "Don't allow the tooltip to highlight the current selection if
@@ -63,21 +63,6 @@ true)"
 ;; Integrate with evil if it's present
 (eval-after-load 'evil
   '(progn
-     (defun company-insert-selected//complete-with-repeat ()
-       "Call `company-complete-selection' but also invoke evil's
-pre and post command hooks to monitor for the changes that the
-completion function will do.
-
-Because the completion function is called from a pre-command hook
-it won't be caught by evil's repeat monitoring, as evil itself
-relies on pre-command and post-command hooks to install it's own
-monitoring hooks."
-       (let ((this-command 'company-complete-selection))
-         (evil-repeat-pre-hook)
-         (company-complete-selection)
-         (evil-repeat-post-hook)))
-     (setq company-insert-selected--complete-func 'company-insert-selected//complete-with-repeat)
-
      ;; See evil/evil-integration.el, same thing is done for other company functions
      (evil-declare-ignore-repeat 'company-select-first-then-next)
      (evil-declare-ignore-repeat 'company-select-previous-then-none)))
