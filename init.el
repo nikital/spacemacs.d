@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     typescript
+     javascript
      nik
      (spacemacs-evil :packages evil-surround evil-unimpaired linum-relative)
      python
