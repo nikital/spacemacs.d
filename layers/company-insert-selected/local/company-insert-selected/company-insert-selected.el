@@ -25,11 +25,14 @@ confirm the selection and finish the completion."
            (selected (nth company-selection company-candidates))
            (prefix (length company-prefix)))
        (move-overlay ov (- (point) prefix) (point))
-       (overlay-put ov 'display (and company-selection-changed selected))))
+       (overlay-put ov
+                    (if (= prefix 0) 'after-string 'display)
+                    (and company-selection-changed selected))))
     (hide
      (advice-remove 'company-fill-propertize 'company-insert-selected//adjust-tooltip-highlight)
      (when company-insert-selected--overlay
-       (delete-overlay company-insert-selected--overlay)))
+       (delete-overlay company-insert-selected--overlay)
+       (setq company-insert-selected--overlay nil)))
     (pre-command
      (when (and company-selection-changed
                 (not (company--company-command-p (this-command-keys))))
