@@ -36,7 +36,7 @@ confirm the selection and finish the completion."
     (pre-command
      (when (and company-selection-changed
                 (not (company--company-command-p (this-command-keys))))
-       (company--unread-last-input)
+       (company--unread-this-command-keys)
        (setq this-command 'company-complete-selection)))))
 
 (defun company-insert-selected//adjust-tooltip-highlight (args)
