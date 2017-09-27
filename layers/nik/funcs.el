@@ -23,7 +23,9 @@
 
 (defun wiki-find-file ()
   (interactive)
-  (let ((default-directory wiki-root))
+  (let ((default-directory wiki-root)
+        projectile-cached-project-root
+        projectile-cached-project-name)
     (projectile-find-file)))
 
 (defun quit-other-window (&optional kill)
