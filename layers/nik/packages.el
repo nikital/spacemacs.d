@@ -2,6 +2,7 @@
   '(
     evil
     company
+    default-org-config
     ))
 
 (defun nik/post-init-evil ()
@@ -21,3 +22,8 @@
   (spacemacs|use-package-add-hook company
     :pre-config
     (unbind-key "C-w" company-active-map)))
+
+(defun nik/post-init-default-org-config ()
+  (spacemacs|use-package-add-hook org
+    :post-config
+    (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
