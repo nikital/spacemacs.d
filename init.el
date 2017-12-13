@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      typescript
-     javascript
+     (javascript :packages js2-mode js-doc json-mode json-snatcher web-beautify)
      nik
      (spacemacs-evil :packages evil-surround evil-unimpaired linum-relative)
      python
