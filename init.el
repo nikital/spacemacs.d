@@ -60,7 +60,6 @@ values."
      ;; syntax-checking
      ;; version-control
      evil-commentary
-     company-insert-selected
      nik-lisp
      gtags
      html

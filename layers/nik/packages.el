@@ -21,7 +21,9 @@
 (defun nik/pre-init-company ()
   (spacemacs|use-package-add-hook company
     :pre-config
-    (unbind-key "C-w" company-active-map)))
+    (unbind-key "C-w" company-active-map)
+    :post-config
+    (company-tng-configure-default)))
 
 (defun nik/post-init-default-org-config ()
   (spacemacs|use-package-add-hook org
