@@ -28,6 +28,12 @@
         projectile-cached-project-name)
     (projectile-find-file)))
 
+(defun nik//file-to-sexp (filename)
+  (with-temp-buffer
+    (insert-file-contents filename)
+    (beginning-of-buffer)
+    (read (current-buffer))))
+
 (defun quit-other-window (&optional kill)
   (interactive)
   (quit-window kill (next-window)))

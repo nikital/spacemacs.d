@@ -3,6 +3,7 @@
     evil
     company
     default-org-config
+    org-agenda
     ))
 
 (defun nik/post-init-evil ()
@@ -29,3 +30,12 @@
   (spacemacs|use-package-add-hook org
     :post-config
     (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
+
+(defun nik/pre-init-org-agenda ()
+  (spacemacs|use-package-add-hook org-agenda
+    :pre-config
+    (when (file-exists-p (concat wiki-root "agenda.el"))
+      (dolist (agenda-file (nik//file-to-sexp (concat wiki-root "agenda.el")))
+        (when (string-match-p "\\.\\." agenda-file)
+          (error "Agenda file outside of wiki-root"))
+        (add-to-list 'org-agenda-files (concat wiki-root agenda-file))))))
