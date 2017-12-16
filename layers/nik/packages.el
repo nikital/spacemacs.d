@@ -34,6 +34,8 @@
 (defun nik/pre-init-org-agenda ()
   (spacemacs|use-package-add-hook org-agenda
     :pre-config
+    (setq org-agenda-start-on-weekday 0)
+    (setq org-agenda-weekend-days '(5 6))
     (when (file-exists-p (concat wiki-root "agenda.el"))
       (dolist (agenda-file (nik//file-to-sexp (concat wiki-root "agenda.el")))
         (when (string-match-p "\\.\\." agenda-file)
