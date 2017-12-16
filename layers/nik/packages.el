@@ -25,7 +25,7 @@
     :post-config
     (company-tng-configure-default)))
 
-(defun nik/post-init-default-org-config ()
+(defun nik/pre-init-default-org-config ()
   (spacemacs|use-package-add-hook org
     :post-config
     (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
