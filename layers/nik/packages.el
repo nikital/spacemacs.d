@@ -3,6 +3,7 @@
     evil
     company
     default-org-config
+    org
     org-agenda
     ))
 
@@ -30,6 +31,9 @@
   (spacemacs|use-package-add-hook org
     :post-config
     (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
+
+(defun nik/post-init-org ()
+  (setq org-startup-with-inline-images nil))
 
 (defun nik/pre-init-org-agenda ()
   (spacemacs|use-package-add-hook org-agenda
