@@ -15,8 +15,8 @@
   (bind-key "RET" 'save-some-buffers-no-confirm evil-normal-state-map)
   (bind-key "C-j" 'nik/evil-scroll-down evil-motion-state-map)
   (bind-key "C-k" 'nik/evil-scroll-up evil-motion-state-map)
-  (bind-key "C-e" 'switch-to-buffer evil-normal-state-map)
-  (bind-key "M-e" 'switch-to-buffer-other-window evil-normal-state-map)
+  (bind-key "C-e" 'switch-to-buffer evil-motion-state-map)
+  (bind-key "M-e" 'switch-to-buffer-other-window evil-motion-state-map)
   (bind-key "C-p" 'projectile-find-file evil-normal-state-map)
   (bind-key "M-p" 'projectile-find-file-other-window evil-normal-state-map))
 
