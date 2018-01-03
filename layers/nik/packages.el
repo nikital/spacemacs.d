@@ -5,6 +5,7 @@
     default-org-config
     org
     org-agenda
+    cc-mode
     ))
 
 (defun nik/post-init-evil ()
@@ -45,3 +46,11 @@
         (when (string-match-p "\\.\\." agenda-file)
           (error "Agenda file outside of wiki-root"))
         (add-to-list 'org-agenda-files (concat wiki-root agenda-file))))))
+
+(defun nik/pre-init-cc-mode ()
+  (spacemacs|use-package-add-hook cc-mode
+    :pre-init
+    (advice-add
+     'c-populate-syntax-table :after
+     (lambda (table)
+       (modify-syntax-entry ?_ "w" table)))))
