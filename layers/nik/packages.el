@@ -60,4 +60,7 @@
   (when (configuration-layer/package-used-p 'projectile)
     (spacemacs|use-package-add-hook magit
       :post-init
-      (spacemacs/set-leader-keys "gp" 'magit-status-projectile))))
+      (spacemacs/set-leader-keys "gp" 'magit-status-projectile)))
+  (spacemacs|use-package-add-hook magit
+    :pre-config
+    (advice-add 'magit-submodule-update :override 'magit-submodule-update-recursive)))

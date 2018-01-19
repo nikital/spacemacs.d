@@ -44,3 +44,10 @@
     (magit-status
      (completing-read "git status: "
                       (projectile-relevant-known-projects)))))
+
+(defun magit-submodule-update-recursive (&optional init)
+  "Clone missing submodules and checkout appropriate commits.
+With a prefix argument also register submodules in \".git/config\"."
+  (interactive "P")
+  (magit-with-toplevel
+    (magit-run-git-async "submodule" "update" "--recursive" (and init "--init"))))
