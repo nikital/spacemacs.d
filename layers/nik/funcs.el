@@ -37,3 +37,10 @@
 (defun quit-other-window (&optional kill)
   (interactive)
   (quit-window kill (next-window)))
+
+(when (configuration-layer/package-used-p 'projectile)
+  (defun magit-status-projectile ()
+    (interactive)
+    (magit-status
+     (completing-read "git status: "
+                      (projectile-relevant-known-projects)))))

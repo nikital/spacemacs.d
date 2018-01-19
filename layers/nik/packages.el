@@ -6,6 +6,7 @@
     org
     org-agenda
     cc-mode
+    magit
     ))
 
 (defun nik/post-init-evil ()
@@ -54,3 +55,9 @@
      'c-populate-syntax-table :after
      (lambda (table)
        (modify-syntax-entry ?_ "w" table)))))
+
+(defun nik/pre-init-magit ()
+  (when (configuration-layer/package-used-p 'projectile)
+    (spacemacs|use-package-add-hook magit
+      :post-init
+      (spacemacs/set-leader-keys "gp" 'magit-status-projectile))))
