@@ -7,6 +7,7 @@
     org-agenda
     cc-mode
     magit
+    imenu
     ))
 
 (defun nik/post-init-evil ()
@@ -65,3 +66,9 @@
   (spacemacs|use-package-add-hook magit
     :pre-config
     (advice-add 'magit-submodule-update :override 'magit-submodule-update-recursive)))
+
+(defun nik/pre-init-imenu ()
+  (when (configuration-layer/package-used-p 'evil)
+    (spacemacs|use-package-add-hook imenu
+      :post-init
+      (evil-set-command-property 'imenu :jump t))))
