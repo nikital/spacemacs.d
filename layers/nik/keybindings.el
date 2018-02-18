@@ -5,3 +5,4 @@
 (spacemacs/set-leader-keys "gw" 'wiki-commit)
 
 (bind-key "<f7>" 'quit-other-window)
+(bind-key "M-t" 'eshell)
