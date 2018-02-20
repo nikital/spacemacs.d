@@ -71,6 +71,7 @@ This function should only modify configuration layer settings."
      c-c++
      ansible
      systemd
+     nginx
      )
 
    ;; List of additional packages that will be installed without being
