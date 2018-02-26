@@ -15,11 +15,12 @@
 
 (defun wiki-commit ()
   (interactive)
-  (if (string-prefix-p
-       wiki-root
-       (expand-file-name default-directory))
-      (async-shell-command "git add -A && git commit -m . && git push")
-    (error "Not on a wiki buffer")))
+  (unless (string-prefix-p
+           wiki-root
+           (expand-file-name default-directory))
+    (error "Not on a wiki buffer"))
+  (save-some-buffers-no-confirm)
+  (async-shell-command "git add -A && git commit -m . && git push"))
 
 (defun wiki-find-file ()
   (interactive)
