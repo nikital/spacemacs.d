@@ -20,7 +20,7 @@
            (expand-file-name default-directory))
     (error "Not on a wiki buffer"))
   (save-some-buffers-no-confirm)
-  (async-shell-command "git add -A && git commit -m . && git push"))
+  (async-shell-command "git add -A && git commit -m . && git push && echo Finished"))
 
 (defun wiki-find-file ()
   (interactive)
