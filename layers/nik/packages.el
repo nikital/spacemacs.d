@@ -8,6 +8,7 @@
     cc-mode
     magit
     imenu
+    ggtags
     ))
 
 (defun nik/post-init-evil ()
@@ -71,3 +72,9 @@
     (spacemacs|use-package-add-hook imenu
       :post-init
       (evil-set-command-property 'imenu :jump t))))
+
+(defun nik/pre-init-ggtags ()
+  (when (configuration-layer/package-used-p 'evil)
+    (spacemacs|use-package-add-hook ggtags
+      :post-init
+      (bind-key "C-]" 'ggtags-find-tag-dwim evil-normal-state-map))))

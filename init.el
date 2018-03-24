@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
       ivy-on-del-error-function 'ignore)
      spacemacs-completion
      spacemacs-editing
+     spacemacs-project
      auto-completion
      ;; better-defaults
      emacs-lisp
