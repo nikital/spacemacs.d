@@ -73,6 +73,7 @@ This function should only modify configuration layer settings."
      ansible
      systemd
      nginx
+     markdown
      )
 
    ;; List of additional packages that will be installed without being
