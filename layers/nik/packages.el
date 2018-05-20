@@ -37,7 +37,15 @@
     (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
 
 (defun nik/post-init-org ()
-  (setq org-startup-with-inline-images nil))
+  (setq org-startup-with-inline-images nil
+        org-directory wiki-root)
+  (let ((wiki-journal (concat wiki-root "Journal.org")))
+    (setq org-capture-templates
+          `(("j" "Journaling")
+            ("ji" "Intersting things I learned" entry (file+olp+datetree ,wiki-journal)
+             "* %? :interesting:")
+            ("jl" "Log things I've done" entry (file+olp+datetree ,wiki-journal)
+             "* Log :log:\n%?")))))
 
 (defun nik/pre-init-org-agenda ()
   (spacemacs|use-package-add-hook org-agenda
