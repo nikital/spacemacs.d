@@ -38,6 +38,7 @@
 
 (defun nik/post-init-org ()
   (setq org-startup-with-inline-images nil
+        org-cycle-separator-lines 1
         org-directory wiki-root)
   (let ((wiki-journal (concat wiki-root "Journal.org")))
     (setq org-capture-templates
