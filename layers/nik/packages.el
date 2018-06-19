@@ -86,4 +86,8 @@
   (when (configuration-layer/package-used-p 'evil)
     (spacemacs|use-package-add-hook ggtags
       :post-init
-      (bind-key "C-]" 'ggtags-find-tag-dwim evil-normal-state-map))))
+      (bind-key "C-]" 'ggtags-find-tag-dwim evil-normal-state-map)
+      :post-config
+      (evil-define-minor-mode-key 'normal 'ggtags-navigation-mode
+        "\r" 'ggtags-navigation-mode-done
+        [return] 'ggtags-navigation-mode-done))))
