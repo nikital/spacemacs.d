@@ -29,7 +29,9 @@
     :pre-config
     (unbind-key "C-w" company-active-map)
     :post-config
-    (company-tng-configure-default)))
+    (company-tng-configure-default)
+    (when (configuration-layer/package-used-p 'evil)
+      (add-hook 'evil-insert-state-exit-hook 'company-cancel))))
 
 (defun nik/pre-init-default-org-config ()
   (spacemacs|use-package-add-hook org
