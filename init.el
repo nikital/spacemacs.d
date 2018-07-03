@@ -75,6 +75,10 @@ This function should only modify configuration layer settings."
      systemd
      nginx
      markdown
+     (shell :variables
+            shell-default-shell 'eshell
+            shell-protect-eshell-prompt t
+            shell-pop-autocd-to-working-dir nil)
      )
 
    ;; List of additional packages that will be installed without being
