@@ -77,6 +77,7 @@ This function should only modify configuration layer settings."
      markdown
      (shell :variables
             shell-default-shell 'eshell
+            shell-default-position 'full
             shell-protect-eshell-prompt t
             shell-pop-autocd-to-working-dir nil)
      )
