@@ -77,8 +77,7 @@
       (spacemacs/set-leader-keys "gp" 'magit-status-projectile)))
   (spacemacs|use-package-add-hook magit
     :pre-config
-    (setq magit-bury-buffer-function 'magit-mode-quit-window)
-    (advice-add 'magit-submodule-update :override 'magit-submodule-update-recursive)))
+    (setq magit-bury-buffer-function 'magit-mode-quit-window)))
 
 (defun nik/pre-init-imenu ()
   (when (configuration-layer/package-used-p 'evil)
