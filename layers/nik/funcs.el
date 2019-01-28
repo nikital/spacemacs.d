@@ -52,3 +52,10 @@ With a prefix argument also register submodules in \".git/config\"."
   (interactive "P")
   (magit-with-toplevel
     (magit-run-git-async "submodule" "update" "--recursive" (and init "--init"))))
+
+(defun nik/ivy-projectile-require-match (args)
+  (let ((optional (nthcdr 2 args)))
+    (if (equal 'projectile-completing-read
+               (plist-get optional :caller))
+        (append args '(:require-match t))
+      args)))

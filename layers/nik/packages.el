@@ -9,6 +9,7 @@
     magit
     imenu
     ggtags
+    ivy
     ))
 
 (defun nik/post-init-evil ()
@@ -94,3 +95,7 @@
       (evil-define-minor-mode-key 'normal 'ggtags-navigation-mode
         "\r" 'ggtags-navigation-mode-done
         [return] 'ggtags-navigation-mode-done))))
+
+(defun nik/pre-init-ivy ()
+  (setq confirm-nonexistent-file-or-buffer t)
+  (advice-add 'ivy-read :filter-args 'nik/ivy-projectile-require-match))
