@@ -23,7 +23,11 @@
   (bind-key "C-e" 'switch-to-buffer evil-motion-state-map)
   (bind-key "M-e" 'switch-to-buffer-other-window evil-motion-state-map)
   (bind-key "C-p" 'projectile-find-file evil-normal-state-map)
-  (bind-key "M-p" 'projectile-find-file-other-window evil-normal-state-map))
+  (bind-key "M-p" 'projectile-find-file-other-window evil-normal-state-map)
+
+  (evil-declare-not-repeat 'save-some-buffers-no-confirm)
+  (evil-declare-not-repeat 'nik/evil-scroll-down)
+  (evil-declare-not-repeat 'nik/evil-scroll-up))
 
 (defun nik/pre-init-company ()
   (spacemacs|use-package-add-hook company
