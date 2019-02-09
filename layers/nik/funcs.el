@@ -52,3 +52,9 @@
                (plist-get optional :caller))
         (append args '(:require-match t))
       args)))
+
+(defun eshell/ll (&rest args)
+  (eshell/ls "-l" args))
+
+(defun eshell/la (&rest args)
+  (eshell/ls "-la" args))
