@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(graphviz
      typescript
      (javascript :packages js2-mode js-doc json-mode json-snatcher web-beautify)
      nik
