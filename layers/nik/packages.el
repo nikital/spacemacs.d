@@ -11,6 +11,7 @@
     ggtags
     ivy
     js2-mode
+    terminal-here
     ))
 
 (defun nik/post-init-evil ()
@@ -108,3 +109,13 @@
   (spacemacs|use-package-add-hook js2-mode
     :post-config
     (setq js2-strict-missing-semi-warning nil)))
+
+(defun nik/init-terminal-here ()
+  (use-package terminal-here
+    :defer t
+    :commands (terminal-here-launch
+               terminal-here-project-launch)
+    :init
+    (spacemacs/set-leader-keys "at" 'terminal-here-launch)
+    :config
+    (setq terminal-here-terminal-command '("gnome-terminal"))))
