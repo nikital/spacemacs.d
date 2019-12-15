@@ -80,6 +80,7 @@ This function should only modify configuration layer settings."
             shell-default-position 'full
             shell-protect-eshell-prompt t
             shell-pop-autocd-to-working-dir nil)
+     latex
      )
 
    ;; List of additional packages that will be installed without being
