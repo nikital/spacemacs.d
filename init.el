@@ -64,7 +64,7 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil
-                      syntax-checking-enable-by-default nil)
+                      syntax-checking-enable-by-default t)
      ;; version-control
      evil-commentary
      nik-lisp

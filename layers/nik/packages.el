@@ -10,6 +10,7 @@
     imenu
     ggtags
     ivy
+    js2-mode
     ))
 
 (defun nik/post-init-evil ()
@@ -102,3 +103,8 @@
 (defun nik/pre-init-ivy ()
   (setq confirm-nonexistent-file-or-buffer t)
   (advice-add 'ivy-read :filter-args 'nik/ivy-projectile-require-match))
+
+(defun nik/pre-init-js2-mode ()
+  (spacemacs|use-package-add-hook js2-mode
+    :post-config
+    (setq js2-strict-missing-semi-warning nil)))
