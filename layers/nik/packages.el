@@ -12,6 +12,7 @@
     ivy
     js2-mode
     terminal-here
+    evil-numbers
     ))
 
 (defun nik/post-init-evil ()
@@ -114,3 +115,8 @@
   (spacemacs|use-package-add-hook terminal-here
     :post-init
     (setq terminal-here-terminal-command '("gnome-terminal"))))
+
+(defun nik/init-evil-numbers ()
+  (use-package evil-numbers
+    :bind (:map evil-normal-state-map
+                ("C-a" . evil-numbers/inc-at-pt))))
