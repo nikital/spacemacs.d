@@ -32,54 +32,43 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(graphviz
-     typescript
-     (javascript :packages js2-mode js-doc json-mode json-snatcher web-beautify)
+   '(
      nik
      (spacemacs-evil :packages evil-surround evil-unimpaired linum-relative)
-     python
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     (ivy
-      :variables
-      ivy-initial-inputs-alist nil
-      ivy-on-del-error-function 'ignore)
      spacemacs-completion
      spacemacs-editing
      spacemacs-project
      auto-completion
-     ;; better-defaults
-     emacs-lisp
-     git
-     ;; markdown
-     ;; neotree
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil
                       syntax-checking-enable-by-default t)
-     ;; version-control
+     (ivy
+      :variables
+      ivy-initial-inputs-alist nil
+      ivy-on-del-error-function 'ignore)
      evil-commentary
-     nik-lisp
+     (shell :variables
+            shell-default-shell 'eshell
+            shell-default-position 'full
+            shell-protect-eshell-prompt t
+            shell-pop-autocd-to-working-dir nil)
+     git
      gtags
+
+     (javascript :packages js2-mode js-doc json-mode json-snatcher web-beautify)
+     typescript
+     python
+     emacs-lisp
+     nik-lisp
      html
      c-c++
      ansible
      systemd
      nginx
      markdown
-     (shell :variables
-            shell-default-shell 'eshell
-            shell-default-position 'full
-            shell-protect-eshell-prompt t
-            shell-pop-autocd-to-working-dir nil)
      latex
+     graphviz
      )
 
    ;; List of additional packages that will be installed without being
