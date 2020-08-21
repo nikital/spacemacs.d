@@ -44,7 +44,8 @@
 (defun nik/pre-init-default-org-config ()
   (spacemacs|use-package-add-hook org
     :post-config
-    (evil-define-key 'normal org-mode-map (kbd "RET") nil)))
+    (evil-define-key 'normal org-mode-map (kbd "RET") nil)
+    (require 'org-tempo)))
 
 (defun nik/post-init-org ()
   (setq org-startup-with-inline-images nil
